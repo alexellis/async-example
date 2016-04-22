@@ -2,6 +2,22 @@
 
 Please **Star** the repo :)
 
+This repo exists to provide practical examples and explanations of how to use and when to apply `async` patterns in Node.js from the `async` library available on `npm`.
+
+### Q&A
+
+* Doesn't `async` have its own documentation?
+
+Yes it does and it's very comprehensive, once you have the hang of these patterns go ahead and read about the many other more specialized options it offers. This page is designed to be a kind of practical cheat-sheet.
+
+* But doesn't language X do asynchronous, too?
+
+It may do, but when working in Node.js specifically I/O needs to be done asynchronously, so it's important to have a few patterns available for managing this.
+
+* Why haven't you featured pattern X or Y?
+
+If said pattern is fundamental and useful for starting out in `async` processing then please raise a PR with a simple example attached.
+
 ### Installing
 
 I've tested these with Node 4.x, 5.x will probably work the same.
@@ -176,12 +192,13 @@ async.waterfall(
 );
 ```
 
-### Other patterns
+### async.util
 
-The other pattern which can be very useful is `async.until / async.while`.
+Another pattern which can be very useful is `async.until / async.while`. Use when you have a non-deterministic amount of work to process. 
 
 See an example here: [xservedbyfinder async.until](https://github.com/alexellis/xservedbyfinder/blob/master/node_v2/app.js)
 
-See also:
+### Taking it further
 
-[async library on npm](https://github.com/caolan/async)
+Head over to the official [async](https://github.com/caolan/async) documentation.
+
