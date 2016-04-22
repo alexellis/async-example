@@ -1,0 +1,23 @@
+{
+  "name": "async-example",
+  "version": "1.0.0",
+  "description": "``` npm install ```",
+  "main": "series.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexellis/async-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexellis/async-example/issues"
+  },
+  "homepage": "https://github.com/alexellis/async-example#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.3"
+  }
+}
