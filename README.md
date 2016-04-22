@@ -155,4 +155,4 @@ See an example here: [xservedbyfinder async.until](https://github.com/alexellis/
 
 See also:
 
-[async library on npm]https://github.com/caolan/async
+[async library on npm](https://github.com/caolan/async)
