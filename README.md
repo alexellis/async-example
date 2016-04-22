@@ -18,10 +18,10 @@ npm install
 
 #### async.queue
 
-When to use it:
+**When to use it:**
 * You have a large amount of of local I/O or HTTP I/O to do and must throttle the amount of work-in-progress. If you allow 1000 TCP ports to open at once this will likely hit the Operating System's limit very quickly. The same applies to file handles when doing I/O.
 
-Running the example:
+**Running the example:**
 
 ```
 $ node sprint.js
@@ -41,6 +41,8 @@ All the results are in now. We have a winner
 
 Extending the example
 * Task: can you randomize the runners entering the track / queue in this file?
+
+**API usage example:**
 
 ```
 var taskHandler = function(task, done) {
