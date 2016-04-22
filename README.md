@@ -151,7 +151,7 @@ async.waterfall(
 
 The other pattern which can be very useful is `async.until / async.while`. 
 
-See an example here: [xservedbyfinder async.until](https://github.com/alexellis/xservedbyfinder/blob/master/node_v1/app.js)
+See an example here: [xservedbyfinder async.until](https://github.com/alexellis/xservedbyfinder/blob/master/node_v2/app.js)
 
 See also:
 
