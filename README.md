@@ -78,7 +78,7 @@ for(var i = 0; i < 100; i++) {
 **Running the example**
 
 ```
-$ node series.js 
+$ node series.js
 We have sent a probe to the moon
 Collecting soil samples.
 Firing boosters and returning to Earth.
@@ -103,20 +103,49 @@ async.series(
 );
 ```
 
-#### 3) async.waterfall
+#### 3) async.parallel
+
+**When to use it:**
+
+* You have a bunch of I/O or asynchronous work to perform and don't care about the order, but can't progress until it's all finished.
+
+API is the same as for async.series, but the keyword is parallel.
+
+Try the example:
+
+[parallel-download.js](https://github.com/alexellis/async-example/blob/master/parallel-download.js)
+
+```
+$ node parallel-download.js
+> Opening HTTP connection to https://github.com/alexellis/async-example
+> Opening HTTP connection to https://github.com/alexellis/docker-arm
+> Opening HTTP connection to https://github.com/alexellis/ghost-on-docker
+> Opening HTTP connection to https://github.com/alexellis/rpi-display
+> Opening HTTP connection to https://github.com/alexellis/arm-node-bench
+> Opening HTTP connection to https://github.com/alexellis/remote_checkins_ruby
+< Downloaded /alexellis/async-example
+< Downloaded /alexellis/arm-node-bench
+< Downloaded /alexellis/ghost-on-docker
+< Downloaded /alexellis/remote_checkins_ruby
+< Downloaded /alexellis/docker-arm
+< Downloaded /alexellis/rpi-display
+All the URLs have been downloaded now.
+```
+
+#### 4) async.waterfall
 
 **When to use it:**
 
 * You have a bunch of I/O to do, but each step is dependent on the previous.. along the chain of call-backs you may be producing intermittent results which get passed forwards. This is like a waterfall with data passing in one direction.
-* At the end you can receive the results of the whole flow in the final callback. 
-* If an error occurs at any part of the waterfall, you just pass that error into the `done()` callback and the final call-back will be invoked. 
+* At the end you can receive the results of the whole flow in the final callback.
+* If an error occurs at any part of the waterfall, you just pass that error into the `done()` callback and the final call-back will be invoked.
 
 [waterfall.js](https://github.com/alexellis/async-example/blob/master/waterfall.js)
 
 **Running the example**
 
 ```
-$ node waterfall.js 
+$ node waterfall.js
 Getting repos list
 Getting stargazers from first repo
 Getting stargazers' detailled information
@@ -149,7 +178,7 @@ async.waterfall(
 
 ### Other patterns
 
-The other pattern which can be very useful is `async.until / async.while`. 
+The other pattern which can be very useful is `async.until / async.while`.
 
 See an example here: [xservedbyfinder async.until](https://github.com/alexellis/xservedbyfinder/blob/master/node_v2/app.js)
 
