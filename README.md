@@ -192,7 +192,7 @@ async.waterfall(
 );
 ```
 
-### async.util
+### async.until
 
 Another pattern which can be very useful is `async.until / async.while`. Use when you have a non-deterministic amount of work to process. 
 
