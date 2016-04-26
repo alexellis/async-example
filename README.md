@@ -124,6 +124,7 @@ async.series(
 **When to use it:**
 
 * You have a bunch of I/O or asynchronous work to perform and don't care about the order, but can't progress until it's all finished.
+* Be careful if you are reading or writing files, or making TCP connections. There is a hard limit each operating system supports and while this may be fine with small numbers, large parallel workloads will cause issues. 
 
 API is the same as for async.series, but the keyword is parallel.
 
@@ -154,7 +155,7 @@ All the URLs have been downloaded now.
 
 * You have a bunch of I/O to do, but each step is dependent on the previous.. along the chain of call-backs you may be producing intermittent results which get passed forwards. This is like a waterfall with data passing in one direction.
 * At the end you can receive the results of the whole flow in the final callback.
-* If an error occurs at any part of the waterfall, you just pass that error into the `done()` callback and the final call-back will be invoked.
+* If an error occurs at any part of the waterfall, you just pass that error into the `done()` callback and the final call-back will be invoked breaking the whole chain.
 
 [waterfall.js](https://github.com/alexellis/async-example/blob/master/waterfall.js)
 
